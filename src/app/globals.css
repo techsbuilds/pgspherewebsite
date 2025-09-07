@@ -3,13 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #202947;
+  --primary-light: #1a1f3a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary-color);
+  --color-primary-light: var(--primary-light);
+  --font-sans: var(--font-assistant);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +25,42 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-assistant), Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202947;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1f3a;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
 }
