@@ -8,12 +8,12 @@ export default function Hero() {
           <div className="space-y-8">
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 leading-16">
-                The Easier way to manage your{" "}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 md:leading-15 leading-9">
+              The Smarter Way to Manage Your {" "}
                 <span className="text-[#202947]">Paying Guest</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed">
-                Join India&apos;s largest network of Smart Properties.
+              All-in-one platform to organize, track, and scale your PG operations.
               </p>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#202947] font-semibold">
                 Save time. Work less. Earn more.

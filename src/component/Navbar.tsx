@@ -43,11 +43,11 @@ export default function Navbar() {
         ? 'bg-[#202947] shadow-lg'
         : 'bg-transparent'
     }`}>
-      <div className="w-full lg:w-[70%] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full lg:w-[70%] max-w-6xl mx-auto md:px-4 px-9 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4 gap-4">
           {/* Logo */}
           <div className="flex items-center">
-            <img src="/logo.jpg" alt="PGSPHERE Logo" className={`${isScrolled ? 'rounded-xl' : ''} h-16 w-16 md:h-16 md:w-16`} />
+            <img src="/favicon.ico" alt="PGSPHERE Logo" onClick={() => scrollToSection("home")} className={`${isScrolled ? 'rounded-xl' : ''} h-16 w-16 md:h-16 md:w-16`} />
           </div>
 
           {/* Desktop Navigation - Center */}
@@ -138,7 +138,7 @@ export default function Navbar() {
                   : 'text-gray-700 hover:text-[#202947]'
               }`}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-8 h-8" />}
             </button>
           </div>
         </div>

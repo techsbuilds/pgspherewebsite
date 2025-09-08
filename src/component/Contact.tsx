@@ -92,7 +92,7 @@ export default function Contact() {
     }
   };
   return (
-    <div className="py-16 bg-gray-100 min-h-screen">
+    <div className="py-16 bg-gray-100 ">
       <div className="w-[70%] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

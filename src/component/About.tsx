@@ -25,13 +25,10 @@ export default function About() {
               </h3>
               <div className="space-y-4 text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                 <p>
-                  PG Sphere is a comprehensive Branch management solution designed specifically for Paying Guest (PG) accommodations and hostels. We understand the unique challenges faced by property managers in this sector and have created a platform that simplifies operations while maximizing efficiency.
+                  PGSphere is a comprehensive Branch management solution designed specifically for Paying Guest (PG). We understand the unique challenges faced by PG managers in this sector and have created a platform that simplifies operations while maximizing efficiency.
                 </p>
                 <p>
-                  Our mission is to revolutionize the way PG accommodations are managed by providing intuitive, user-friendly tools that work seamlessly across web and mobile platforms. We believe in empowering property managers with technology that saves time, reduces errors, and increases profitability.
-                </p>
-                <p>
-                  With years of experience in the hospitality and property management industry, our team has developed a solution that addresses the real-world needs of PG operators, from tenant management to financial tracking and maintenance scheduling.
+                  Our mission is to revolutionize the way PG accommodations are managed by providing intuitive, user-friendly tools that work seamlessly across web and mobile platforms. We believe in empowering PG managers with technology that saves time, reduces errors, and increases profitability.
                 </p>
               </div>
             </div>

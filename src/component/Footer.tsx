@@ -20,12 +20,7 @@ export default function Footer() {
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
                 Terms & Conditions
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                Refund Policy
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                Careers
-              </a>
+              
             </div>
           </div>
 
@@ -44,7 +39,7 @@ export default function Footer() {
               
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white" />
-                <span className="text-sm text-gray-300">North: +91 7874510328</span>
+                <span className="text-sm text-gray-300">India : +91 7874510328</span>
               </div>
               
               
