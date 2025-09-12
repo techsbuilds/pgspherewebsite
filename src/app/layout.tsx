@@ -34,9 +34,11 @@ export default function RootLayout({
         <link rel="icon" href="/logo.ico" />
       </head>
       <body
-        className={`${assistant.variable} antialiased`}
+        className={`${assistant.variable} antialiased overflow-x-hidden`}
       >
-        {children}
+        <div className="w-full max-w-[100vw] overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   );

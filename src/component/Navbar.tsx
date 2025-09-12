@@ -2,21 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,67 +27,43 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-      (isScrolled || isMenuOpen)
-        ? 'bg-[#202947] shadow-lg'
-        : 'bg-transparent'
-    }`}>
-      <div className="w-full lg:w-[70%] max-w-6xl mx-auto md:px-4 px-9 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-4 gap-4">
+    <nav className={`fixed w-full top-0 z-50 bg-[#202947] shadow-lg h-16 overflow-x-hidden`}>
+      <div className="w-full mx-0 px-3 sm:px-4 lg:pl-22 lg:pr-30 h-full">
+        <div className="flex items-center justify-between h-full gap-4">
           {/* Logo */}
-          <div className="flex items-center">
-            <img src="/favicon.ico" alt="PGSPHERE Logo" onClick={() => scrollToSection("home")} className={`${isScrolled ? 'rounded-xl' : ''} h-16 w-16 md:h-16 md:w-16`} />
+          <div className="flex items-center gap-2">
+            <img src="/favicon.ico" alt="PGSPHERE Logo" onClick={() => scrollToSection("home")} className ='rounded-xl h-10 w-10 md:h-10 md:w-10 cursor-pointer' />
+            <span className="text-xl font-bold font-sans text-white cursor-pointer" onClick={() => scrollToSection("home")}>Pgsphere</span>
           </div>
 
           {/* Desktop Navigation - Center */}
-          <div className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+          <div className="hidden lg:flex items-center space-x-10 flex-1 justify-center">
             <button
               onClick={() => scrollToSection("home")}
-              className={`font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-white hover:text-gray-300' 
-                  : 'text-gray-700 hover:text-[#202947]'
-              }`}
-            >
+              className='text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300' >
               Home
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className={`font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-white hover:text-gray-300' 
-                  : 'text-gray-700 hover:text-[#202947]'
-              }`}
+              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className={`font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-white hover:text-gray-300' 
-                  : 'text-gray-700 hover:text-[#202947]'
-              }`}
+              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
             >
               About Us
             </button>
             <button
               onClick={() => scrollToSection("demo")}
-              className={`font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-white hover:text-gray-300' 
-                  : 'text-gray-700 hover:text-[#202947]'
-              }`}
+              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
             >
               Demo
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className={`font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-white hover:text-gray-300' 
-                  : 'text-gray-700 hover:text-[#202947]'
-              }`}
+              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
             >
               Contact
             </button>
@@ -108,21 +73,13 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={() => window.location.href = '/login'}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-white hover:text-gray-300 border border-white hover:bg-white hover:text-[#202947]' 
-                  : 'text-[#202947] border border-[#202947] hover:bg-[#202947] hover:text-white'
-              }`}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 text-white border border-white hover:bg-white hover:text-[#202947]`}
             >
               Login
             </button>
             <button
               onClick={() => window.location.href = '/signup'}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 ${
-                isScrolled 
-                  ? 'bg-white text-[#202947] hover:bg-gray-100' 
-                  : 'bg-[#202947] text-white hover:bg-[#1a1f3a]'
-              }`}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 bg-[#3B82F6] text-white hover:bg-[#2563EB]`}
             >
               Sign Up
             </button>
@@ -132,11 +89,7 @@ export default function Navbar() {
           <div className="lg:hidden">
             <button
               onClick={toggleMenu}
-              className={`transition-colors duration-300 ${
-                (isScrolled || isMenuOpen)
-                  ? 'text-white hover:text-gray-300'
-                  : 'text-gray-700 hover:text-[#202947]'
-              }`}
+              className={`transition-colors duration-300 text-white hover:text-gray-300`}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-8 h-8" />}
             </button>
@@ -145,51 +98,55 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden">
-            <div className={`px-2 pt-2 pb-3 space-y-1 border-t transition-colors duration-300 bg-[#202947] border-gray-600`}>
-              <button
-                onClick={() => scrollToSection("home")}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700`}
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700`}
-              >
-                Services
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700`}
-              >
-                About Us
-              </button>
-              <button
-                onClick={() => scrollToSection("demo")}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700`}
-              >
-                Demo
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className={`block px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700`}
-              >
-                Contact
-              </button>
-              <div className="mt-4 space-y-2">
-                <button
-                  onClick={() => window.location.href = '/login'}
-                  className={`block w-full px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 text-white border border-white hover:bg-white hover:text-[#202947]`}
-                >
-                  Login
-                </button>
-                <button
-                  onClick={() => window.location.href = '/signup'}
-                  className={`block w-full px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 bg-white text-[#202947] hover:bg-gray-100`}
-                >
-                  Sign Up
-                </button>
+          <div className="lg:hidden fixed inset-0 z-40 flex items-start pointer-events-none">
+            {/* translucent backdrop that doesn't block scroll/taps */}
+            <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+            <div className={`pointer-events-auto w-full h-1/2 max-h-[28rem] shadow-2xl px-3 pt-4 pb-6 border-b rounded-b-xl transition-colors duration-300 bg-[#202947] border-gray-600 mt-16`}> 
+              {/* inner card like the reference */}
+              <div className="h-full overflow-y-auto">
+                <div className="bg-[#1b2440] rounded-lg p-3">
+                  <button
+                    onClick={() => scrollToSection("home")}
+                    className={`block w-full text-left px-3 py-3 text-lg font-medium text-white`}
+                  >
+                    Home
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className={`block w-full text-left text-lg px-3 py-3 text-base font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700/40`}
+                  >
+                    About Us
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("services")}
+                    className={`block w-full text-left px-3 py-3 text-lg font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700/40`}
+                  >
+                    Services
+                  </button>
+                  
+                  <button
+                    onClick={() => scrollToSection("demo")}
+                    className={`block w-full text-left px-3 py-3 text-lg font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700/40`}
+                  >
+                    Demo
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className={`block w-full text-left px-3 py-3 text-lg font-medium rounded-md transition-colors duration-300 text-white hover:text-gray-300 hover:bg-gray-700/40`}
+                  >
+                    Contact
+                  </button>
+                 
+                  <div className="mt-4 space-y-3">
+                    <div className="text-center text-white text-lg">Login</div>
+                    <button
+                      onClick={() => window.location.href = '/signup'}
+                      className={`block w-full px-3 py-3 text-base font-semibold rounded-md transition-colors duration-300 bg-[#3B82F6] text-white hover:bg-[#2563EB]`}
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

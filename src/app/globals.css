@@ -28,6 +28,17 @@ body {
   font-family: var(--font-assistant), Arial, Helvetica, sans-serif;
 }
 
+/* Prevent horizontal scrolling on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure images don't exceed viewport width on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

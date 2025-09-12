@@ -93,7 +93,7 @@ export default function Contact() {
   };
   return (
     <div className="py-16 bg-gray-100 ">
-      <div className="w-[70%] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-3 sm:px-4 lg:px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-wider">

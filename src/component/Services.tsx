@@ -3,7 +3,7 @@ import { Smartphone, Monitor, Cloud } from "lucide-react";
 export default function Services() {
   return (
     <div className="py-16 bg-gray-50">
-      <div className="w-[70%] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-2 sm:px-4 lg:px-22">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">

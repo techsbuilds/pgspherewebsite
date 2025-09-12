@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className="py-16 bg-white">
-      <div className="w-[70%] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-3 sm:px-4 lg:px-22">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
@@ -16,7 +16,7 @@ export default function About() {
         </div>
 
         {/* Content */}
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Column - Text Content */}
             <div className="space-y-6">
