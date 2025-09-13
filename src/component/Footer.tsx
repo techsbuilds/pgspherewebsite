@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -18,45 +18,44 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex items-center gap-4">
-              <a aria-label="Facebook" href="#" className="text-gray-300 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
-              <a aria-label="Twitter" href="#" className="text-gray-300 hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-              <a aria-label="Instagram" href="#" className="text-gray-300 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+              <a aria-label="Youtube" href="#" className="text-gray-300 hover:text-white transition-colors"><Youtube className="w-6 h-6" /></a>
+              <a aria-label="Instagram" href="https://www.instagram.com/pgsphere?igsh=bDRxNDIwMXQxenF2" className="text-gray-300 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
               <a aria-label="LinkedIn" href="#" className="text-gray-300 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
             </div>
           </div>
 
           {/* Quick Links */}
-          
 
 
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-              <ul className="space-y-3 text-gray-300 text-sm">
-                <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                <li><a href="#demo" className="hover:text-white transition-colors">Demo</a></li>
-                <li><a href="#contact" className="hover:text-white transition-colors">contact</a></li>
 
-              </ul>
-            </div>
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
+              <li><a href="#demo" className="hover:text-white transition-colors">Demo</a></li>
+              <li><a href="#contact" className="hover:text-white transition-colors">contact</a></li>
 
-            {/* Legal */}
-            <div className="space-y-4">
-              <h4 className="text-lg font-semibold text-white">Legal</h4>
-              <ul className="space-y-3 text-gray-300 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Refund Policy</a></li>
-              </ul>
-            </div>
+            </ul>
+          </div>
 
-          
+          {/* Legal */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-white">Legal</h4>
+            <ul className="space-y-3 text-gray-300 text-sm">
+              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Refund Policy</a></li>
+            </ul>
+          </div>
+
+
 
           {/* Contact */}
           <div className="space-y-4 sm:col-span-2 md:col-span-1 pl-0 md:pl-25">
             <h4 className="text-lg font-semibold text-white">Contact Us</h4>
             <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-3 text-gray-300"><Mail className="w-4 h-4" /> contact@pgsphere.com</div>
+              <div className="flex items-center gap-3 text-gray-300"><Mail className="w-4 h-4" /> techsbuilds@gmail.com</div>
               <div className="flex items-center gap-3 text-gray-300"><Phone className="w-4 h-4" /> +91 7874510328</div>
               <div className="flex items-start gap-3 text-gray-300"><MapPin className="w-4 h-4 mt-1" />
                 <div>

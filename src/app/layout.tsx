@@ -11,11 +11,11 @@ const assistant = Assistant({
 export const metadata: Metadata = {
   title: "PGSPHERE",
   description: "PGSPHERE - Find and manage paying guest accommodations with ease.",
-  icons: {
-    icon: "/logo.ico",
-    shortcut: "/logo.ico",
-    apple: "/logo.ico",
-  },
+  // icons: {
+   
+  //   shortcut: "/logo.ico",
+  //   apple: "/logo.ico",
+  // },
   openGraph: {
     title: "PGSPHERE",
     description: "PGSPHERE - Find and manage paying guest accommodations with ease.",

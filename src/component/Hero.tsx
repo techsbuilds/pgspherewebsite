@@ -22,11 +22,11 @@ export default function Hero() {
           </div>
 
           {/* Right Column - 30% for home image */}
-          <div className="w-full pt-6 lg:pt-20 rounded-2xl overflow-hidden order-1 lg:order-2 lg:w-132 lg:h-140">
+          <div className="w-full pt-6 lg:pt-10 rounded-2xl overflow-hidden order-1 lg:order-2 lg:w-132 lg:h-140">
             <img 
             height={600}
             width={410}
-              src="/home.jpg" 
+              src="/home.png" 
               alt="Property management interface" 
               className="w-full max-w-sm mx-auto rounded-xl lg:w-132 lg:h-140"
             />

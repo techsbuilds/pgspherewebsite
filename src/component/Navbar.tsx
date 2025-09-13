@@ -40,30 +40,30 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-10 flex-1 justify-center">
             <button
               onClick={() => scrollToSection("home")}
-              className='text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300' >
+              className='text-lg font-medium transition-colors  cursor-pointer duration-300 text-white hover:text-gray-300' >
               Home
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
+              className={`text-lg font-medium transition-colors  cursor-pointer  duration-300 text-white hover:text-gray-300`}
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
+              className={`text-lg font-medium transition-colors  cursor-pointer  duration-300 text-white hover:text-gray-300`}
             >
               About Us
             </button>
             <button
               onClick={() => scrollToSection("demo")}
-              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
+              className={`text-lg font-medium transition-colors  cursor-pointer duration-300 text-white hover:text-gray-300`}
             >
               Demo
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className={`text-lg font-medium transition-colors duration-300 text-white hover:text-gray-300`}
+              className={`text-lg font-medium transition-colors  cursor-pointer  duration-300 text-white hover:text-gray-300`}
             >
               Contact
             </button>
@@ -73,13 +73,13 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center space-x-3">
             <button
               onClick={() => window.location.href = '/login'}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 text-white border border-white hover:bg-white hover:text-[#202947]`}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer  duration-300 text-white border border-white hover:bg-white hover:text-[#202947]`}
             >
               Login
             </button>
             <button
               onClick={() => window.location.href = '/signup'}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors duration-300 bg-[#3B82F6] text-white hover:bg-[#2563EB]`}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors  cursor-pointer duration-300 bg-[#3B82F6] text-white hover:bg-[#2563EB]`}
             >
               Sign Up
             </button>
@@ -100,8 +100,8 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="lg:hidden fixed inset-0 z-40 flex items-start pointer-events-none">
             {/* translucent backdrop that doesn't block scroll/taps */}
-            <div className="absolute inset-0 bg-black/20 pointer-events-none" />
-            <div className={`pointer-events-auto w-full h-1/2 max-h-[28rem] shadow-2xl px-3 pt-4 pb-6 border-b rounded-b-xl transition-colors duration-300 bg-[#202947] border-gray-600 mt-16`}> 
+            <div className="absolute inset-0 pointer-events-none" />
+            <div className={`pointer-events-auto w-full h-1/2 max-h-[42rem] shadow-2xl px-3 pt-4 pb-6 border-b rounded-b-xl transition-colors duration-300 bg-[#202947] border-gray-600 mt-16`}> 
               {/* inner card like the reference */}
               <div className="h-full overflow-y-auto">
                 <div className="bg-[#1b2440] rounded-lg p-3">
@@ -146,6 +146,7 @@ export default function Navbar() {
                       Sign Up
                     </button>
                   </div>
+
                 </div>
               </div>
             </div>
