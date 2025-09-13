@@ -101,9 +101,9 @@ export default function Navbar() {
           <div className="lg:hidden fixed inset-0 z-40 flex items-start pointer-events-none">
             {/* translucent backdrop that doesn't block scroll/taps */}
             <div className="absolute inset-0 pointer-events-none" />
-            <div className={`pointer-events-auto w-full h-1/2 max-h-[42rem] shadow-2xl px-3 pt-4 pb-6 border-b rounded-b-xl transition-colors duration-300 bg-[#202947] border-gray-600 mt-16`}> 
+            <div className={`pointer-events-auto w-full   shadow-2xl px-3 pt-4 pb-6 border-b rounded-b-xl transition-colors duration-300 bg-[#202947] border-gray-600 mt-16`}> 
               {/* inner card like the reference */}
-              <div className="h-full overflow-y-auto">
+              <div className="h-full ">
                 <div className="bg-[#1b2440] rounded-lg p-3">
                   <button
                     onClick={() => scrollToSection("home")}
