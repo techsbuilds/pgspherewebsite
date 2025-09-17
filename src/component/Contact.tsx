@@ -27,6 +27,7 @@ export default function Contact() {
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -74,19 +75,34 @@ export default function Contact() {
 
     e.preventDefault();
     setSuccessMessage(null);
+    setSubmitError(null);
     if (!validateForm()) return;
     setIsSubmitting(true);
     try {
       // Simulate submit
       await new Promise(resolve => setTimeout(resolve, 500));
-
-      const response = await axios.post(`${API_URL}/contact`, formData)
-
-      if(response.status === 201){
-        setSuccessMessage("Thanks! Your message has been sent.");
+      if (!API_URL) {
+        throw new Error("Backend URL is not configured.");
       }
+      const response = await axios.post<{ message?: string }>(`${API_URL}/contact`, formData)
 
-      setFormData({ name: "", email: "", mobile_no: "", message: "" });
+      if (response.status === 201) {
+        setSuccessMessage("Thanks! Your message has been sent.");
+        setFormData({ name: "", email: "", mobile_no: "", message: "" });
+      } else {
+        const maybeMessage = response.data?.message || "We couldn't submit your request. Please try again.";
+        setSubmitError(maybeMessage);
+      }
+    } catch (error: unknown) {
+      if (axios.isAxiosError<{ message?: string }>(error)) {
+        const axiosMessage = error.response?.data?.message;
+        const networkMessage = error.message === "Network Error" ? "Network error. Please check your connection and try again." : undefined;
+        setSubmitError(axiosMessage || networkMessage || "Something went wrong while sending your message. Please try again.");
+      } else if (error instanceof Error) {
+        setSubmitError(error.message || "Something went wrong while sending your message. Please try again.");
+      } else {
+        setSubmitError("Something went wrong while sending your message. Please try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -114,6 +130,11 @@ export default function Contact() {
             {successMessage && (
               <div role="status" aria-live="polite" className="rounded-xl border border-green-200 bg-green-50 p-3 text-green-800">
                 {successMessage}
+              </div>
+            )}
+            {submitError && (
+              <div role="alert" aria-live="assertive" className="rounded-xl border border-red-200 bg-red-50 p-3 text-red-800">
+                {submitError}
               </div>
             )}
             {/* Name and Email Row */}

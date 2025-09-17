@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -12,9 +12,8 @@ export default function Navbar() {
   };
 
   const scrollToSection = (sectionId: string) => {
-    // Check if we're on the signup page
-    if (window.location.pathname === '/signup') {
-      // Redirect to home page and then scroll to section
+    // When not on the homepage, redirect to the section on home
+    if (window.location.pathname !== '/') {
       window.location.href = `/#${sectionId}`;
     } else {
       // Normal scroll behavior for main page
@@ -72,7 +71,7 @@ export default function Navbar() {
           {/* Login/Signup Buttons - Right */}
           <div className="hidden lg:flex items-center space-x-3">
             <button
-              onClick={() => window.location.href = '/login'}
+              onClick={() => window.location.href = 'https://app.pgsphere.com/login'}
               className={`px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer  duration-300 text-white border border-white hover:bg-white hover:text-[#202947]`}
             >
               Login
