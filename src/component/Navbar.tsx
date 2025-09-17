@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,18 +71,18 @@ export default function Navbar() {
 
           {/* Login/Signup Buttons - Right */}
           <div className="hidden lg:flex items-center space-x-3">
-            <button
-              onClick={() => window.location.href = 'https://app.pgsphere.com/login'}
+            <a
+              href="https://app.pgsphere.com/login" target="_blank"
               className={`px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer  duration-300 text-white border border-white hover:bg-white hover:text-[#202947]`}
             >
               Login
-            </button>
-            <button
-              onClick={() => window.location.href = '/signup'}
+            </a>
+            <Link
+              href={'/signup'}
               className={`px-4 py-2 rounded-lg font-medium transition-colors  cursor-pointer duration-300 bg-[#3B82F6] text-white hover:bg-[#2563EB]`}
             >
               Sign Up
-            </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -137,13 +138,13 @@ export default function Navbar() {
                   </button>
                  
                   <div className="mt-4 space-y-3">
-                    <div className="text-center text-white text-lg">Login</div>
-                    <button
-                      onClick={() => window.location.href = '/signup'}
+                    <a href="https://app.pgsphere.com/login" target="_blank" className="text-center text-white text-lg">Login</a>
+                    <Link
+                      href={'/signup'}
                       className={`block w-full px-3 py-3 text-base font-semibold rounded-md transition-colors duration-300 bg-[#3B82F6] text-white hover:bg-[#2563EB]`}
                     >
                       Sign Up
-                    </button>
+                    </Link>
                   </div>
 
                 </div>
